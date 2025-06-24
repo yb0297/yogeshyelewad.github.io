@@ -1,100 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Yogesh Yelewad | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogesh Yelewad - Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-900 text-white">
-
-  <!-- Button Bar -->
-  <div class="flex justify-center space-x-4 py-6 bg-gray-800">
-    <button onclick="scrollTo('#experience')" class="btn">Experience</button>
-    <button onclick="scrollTo('#education')" class="btn">Education</button>
-    <button onclick="scrollTo('#certificates')" class="btn">Certificates</button>
-    <button onclick="scrollTo('#projects')" class="btn">Projects</button>
-  </div>
-
-  <!-- Hero Section -->
-  <section id="hero" class="h-screen flex flex-col justify-center items-center relative overflow-hidden">
-    <div id="tech-bg" class="absolute inset-0"></div>
-    <div class="relative z-10 text-center space-y-4">
-      <h1 class="text-5xl md:text-7xl font-bold">Hi, I am Yogesh Yelewad</h1>
-      <p class="text-2xl italic">Inventor</p>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="py-16 px-6" data-aos="fade-up">
-    <h2 class="text-4xl font-bold text-center mb-6">Experience</h2>
-    <ul class="max-w-3xl mx-auto list-disc list-inside space-y-4">
-      <li><strong>Vice Chairperson</strong> – Aakash Research Labs</li>
-      <li><strong>R&D Advisor</strong> – IEEE SRMIST SSIT</li>
-      <li><strong>Co‑founder</strong> – Weebs.Hideout</li>
-    </ul>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="py-16 px-6 bg-gray-800" data-aos="fade-up">
-    <h2 class="text-4xl font-bold text-center mb-6">Education</h2>
-    <ul class="max-w-3xl mx-auto list-disc list-inside space-y-4">
-      <li><strong>B.Tech in Electronics &amp; Computer Engineering</strong> – SRMIST, Chennai</li>
-    </ul>
-  </section>
-
-  <!-- Certificates -->
-  <section id="certificates" class="py-16 px-6" data-aos="fade-up">
-    <h2 class="text-4xl font-bold text-center mb-6">Certificates</h2>
-    <ul class="max-w-3xl mx-auto list-disc list-inside space-y-4">
-      <li>IoT Workshop – IEEE SSIT SSN (2023)</li>
-      <!-- Add more certificates here -->
-    </ul>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="py-16 px-6 bg-gray-800" data-aos="fade-up">
-    <h2 class="text-4xl font-bold text-center mb-6">Projects</h2>
-    <div class="max-w-4xl mx-auto space-y-8">
-      <div class="bg-gray-700 p-6 rounded">
-        <h3 class="text-2xl font-semibold">IoT for Biodegradable Waste</h3>
-        <p class="mt-2">Organized & led IEEE SSIT event on IoT transforming waste into wealth.</p>
-      </div>
-      <!-- Add more project entries as needed -->
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="py-16 px-6 text-center" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-6">Skills</h2>
-    <div class="max-w-xl mx-auto space-y-4">
-      <div><span>IoT & Embedded Systems</span>
-        <div class="w-full bg-gray-700 rounded h-4 mt-1"><div class="bg-yellow-500 h-4 rounded animate-skill-90"></div></div>
-      </div>
-      <div><span>Research & Leadership</span>
-        <div class="w-full bg-gray-700 rounded h-4 mt-1"><div class="bg-yellow-500 h-4 rounded animate-skill-85"></div></div>
-      </div>
-      <div><span>JavaScript & Web Development</span>
-        <div class="w-full bg-gray-700 rounded h-4 mt-1"><div class="bg-yellow-500 h-4 rounded animate-skill-80"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-16 px-6 bg-gray-800 text-center" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-4">Contact</h2>
-    <p>📧 <a href="mailto:hello@yogeshyelewad.com" class="text-blue-400">hello@yogeshyelewad.com</a></p>
-    <p>🔗 <a href="https://linkedin.com/in/yogeshyelewad" class="text-blue-400">LinkedIn</a></p>
-    <p>💻 <a href="https://github.com/yb0297" class="text-blue-400">GitHub</a></p>
-  </section>
-
-  <footer class="py-6 text-center text-sm">© 2025 Yogesh Yelewad</footer>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script src="script.js"></script>
+<body>
+    <header>
+        <div class="hero">
+            <h1>Hi, I am Yogesh Yelewad</h1>
+            <p>inventor</p>
+        </div>
+    </header>
+    <nav>
+        <button onclick="showSection('experience')">Experience</button>
+        <button onclick="showSection('education')">Education</button>
+        <button onclick="showSection('certificates')">Certificates</button>
+        <button onclick="showSection('projects')">Projects</button>
+    </nav>
+    <main>
+        <section id="experience" class="hidden">
+            <h2>Experience</h2>
+            <!-- Add your experience from LinkedIn here -->
+        </section>
+        <section id="education" class="hidden">
+            <h2>Education</h2>
+            <!-- Add your education from LinkedIn here -->
+        </section>
+        <section id="certificates" class="hidden">
+            <h2>Certificates</h2>
+            <!-- Add your certificates from LinkedIn here -->
+        </section>
+        <section id="projects" class="hidden">
+            <h2>Projects</h2>
+            <!-- Add your projects from LinkedIn here -->
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <!-- Add your skills from LinkedIn here -->
+                <li>Skill 1</li>
+                <li>Skill 2</li>
+                <li>Skill 3</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <!-- Add your contact information here -->
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
