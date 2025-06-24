@@ -1,80 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta & Title -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yogesh Yelewad | Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Yogesh Yelewad | Animated Portfolio</title>
+
+  <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css"/>
 </head>
-<body class="bg-gray-900 text-white scroll-smooth">
+<body class="bg-gray-900 text-white relative">
+
+  <!-- Particle Background -->
+  <div id="particles-js" class="fixed inset-0 -z-10"></div>
 
   <!-- Navbar -->
-  <nav class="fixed w-full bg-black bg-opacity-80 backdrop-blur z-50 shadow-lg">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-      <h1 class="text-xl font-bold">Yogesh</h1>
-      <ul class="flex space-x-6">
-        <li><a href="#hero" class="hover:text-yellow-400">Home</a></li>
-        <li><a href="#about" class="hover:text-yellow-400">About</a></li>
-        <li><a href="#experience" class="hover:text-yellow-400">Experience</a></li>
-        <li><a href="#projects" class="hover:text-yellow-400">Projects</a></li>
-        <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+  <nav class="fixed w-full bg-black bg-opacity-70 backdrop-blur z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold">Yogesh</h1>
+      <ul class="flex space-x-5">
+        <li><button onclick="scrollTo('#about')" class="hover:text-yellow-400">About</button></li>
+        <li><button onclick="scrollTo('#skills')" class="hover:text-yellow-400">Skills</button></li>
+        <li><button onclick="scrollTo('#projects')" class="hover:text-yellow-400">Projects</button></li>
+        <li><button onclick="scrollTo('#contact')" class="hover:text-yellow-400">Contact</button></li>
       </ul>
+      <button id="theme-toggle" class="ml-4 text-xl">🌙</button>
     </div>
   </nav>
 
   <!-- Hero -->
   <section id="hero" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-indigo-700 to-purple-800">
-    <h2 class="text-4xl md:text-6xl font-bold mb-4 animate-type">Hi, I'm Yogesh</h2>
-    <p class="text-lg md:text-2xl max-w-xl mx-auto">Vice Chairperson at Aakash Research Labs | Innovator | Tech Leader</p>
+    <h2 class="text-5xl md:text-7xl font-bold mb-4 animate-type">Hi, I'm Yogesh</h2>
+    <p class="text-xl md:text-2xl max-w-2xl">Vice Chairperson @ Aakash Research Labs | Innovator | Tech Leader</p>
+    <button onclick="scrollTo('#projects')" class="mt-8 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 rounded transition">Explore Projects</button>
   </section>
 
   <!-- About -->
-  <section id="about" class="py-20 px-6 bg-gray-800" data-aos="fade-up">
-    <div class="max-w-4xl mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-4">About Me</h3>
-      <p class="text-gray-300">I’m passionate about IoT, sustainability, and future-forward tech. I'm Vice Chairperson at Aakash Research Labs and former R&D advisor at IEEE SRMIST SSIT.</p>
+  <section id="about" class="py-20 px-6" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-4xl font-bold mb-4">About Me</h3>
+      <p class="text-gray-300">Passionate about IoT, sustainability & cutting-edge tech. Vice Chairperson of Aakash Research Labs & former R&D advisor at IEEE SRMIST SSIT.</p>
+      <button onclick="scrollTo('#skills')" class="mt-6 px-5 py-2 border-2 border-yellow-500 rounded hover:bg-yellow-500 transition">See my skills</button>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section id="experience" class="py-20 px-6" data-aos="fade-right">
-    <div class="max-w-4xl mx-auto">
-      <h3 class="text-3xl font-bold mb-6 text-center">Experience</h3>
-      <ul class="space-y-6 text-lg text-gray-200">
-        <li><strong>Vice Chairperson</strong> - Aakash Research Labs</li>
-        <li><strong>R&D Advisor</strong> - IEEE SRMIST SSIT</li>
-        <li><strong>Co-founder</strong> - Weebs.Hideout</li>
-      </ul>
+  <!-- Skills -->
+  <section id="skills" class="py-20 px-6 bg-gray-800" data-aos="fade-left">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-4xl font-bold mb-8 text-center">Skills</h3>
+      <div class="space-y-6">
+        <div><span>IoT & Embedded Systems</span>
+          <div class="w-full bg-gray-700 rounded h-4 mt-1">
+            <div class="bg-yellow-500 h-4 rounded animate-skill-90"></div>
+          </div>
+        </div>
+        <div><span>JavaScript & WebDev</span>
+          <div class="w-full bg-gray-700 rounded h-4 mt-1">
+            <div class="bg-yellow-500 h-4 rounded animate-skill-80"></div>
+          </div>
+        </div>
+        <div><span>Research & Leadership</span>
+          <div class="w-full bg-gray-700 rounded h-4 mt-1">
+            <div class="bg-yellow-500 h-4 rounded animate-skill-85"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="py-20 px-6 bg-gray-800" data-aos="fade-left">
-    <div class="max-w-4xl mx-auto">
-      <h3 class="text-3xl font-bold mb-6 text-center">Projects</h3>
-      <p class="text-gray-300 text-center mb-4">Organized “IoT for Biodegradable Waste” events, hosted innovation workshops, and developed several IoT prototypes.</p>
+  <section id="projects" class="py-20 px-6" data-aos="fade-right">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-4xl font-bold mb-8 text-center">Projects</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Project Card 1 -->
+        <div class="bg-gray-800 rounded-lg p-6 shadow-lg transform hover:scale-105 transition">
+          <h4 class="text-2xl font-semibold mb-2">IoT Waste Management</h4>
+          <p class="text-gray-300 mb-4">Organized “IoT for Biodegradable Waste” events and demos.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 rounded">GitHub</a>
+            <a href="#" class="px-4 py-2 border border-yellow-500 hover:bg-yellow-500 rounded">Demo</a>
+          </div>
+        </div>
+        <!-- More project cards can be added similarly -->
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 px-6" data-aos="zoom-in">
-    <div class="max-w-4xl mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-4">Contact Me</h3>
-      <p class="text-gray-300">📧 <a href="mailto:hello@yogeshyelewad.com" class="text-blue-400">hello@yogeshyelewad.com</a></p>
-      <p class="text-gray-300 mt-2">🔗 <a href="https://linkedin.com/in/yogeshyelewad" class="text-blue-400">LinkedIn</a></p>
-      <p class="text-gray-300 mt-2">💻 <a href="https://github.com/yb0297" class="text-blue-400">GitHub</a></p>
+  <section id="contact" class="py-20 px-6 bg-gray-800" data-aos="zoom-in">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-4xl font-bold mb-4">Contact Me</h3>
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4 max-w-md mx-auto">
+        <input type="text" name="name" placeholder="Name" required class="w-full p-3 bg-gray-700 rounded"/>
+        <input type="email" name="email" placeholder="Email" required class="w-full p-3 bg-gray-700 rounded"/>
+        <textarea name="message" rows="4" placeholder="Your message…" required class="w-full p-3 bg-gray-700 rounded"></textarea>
+        <button type="submit" class="w-full px-6 py-3 bg-yellow-500 hover:bg-yellow-600 rounded">Send Message</button>
+      </form>
     </div>
   </section>
 
+  <!-- Back to Top -->
+  <button id="toTop" class="fixed bottom-8 right-8 bg-yellow-500 text-black p-3 rounded-full hidden">↑</button>
+
   <!-- Footer -->
-  <footer class="bg-black text-center text-sm py-6">
-    © 2025 Yogesh Yelewad — Powered by 💡 & Code
-  </footer>
+  <footer class="bg-black text-center py-6 text-sm">© 2025 Yogesh Yelewad</footer>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
