@@ -1,90 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Yogesh Yelewad | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-  <style>@keyframes typing{from{width:0;}to{width:100%;}}.typewriter{overflow:hidden;border-right:3px solid #fff;white-space:nowrap;width:0;animation:typing 3s steps(30,end) forwards;}#particles-js{position:fixed;inset:0;z-index:-1;}#buttons button{margin:0 0.5rem;padding:0.5rem 1rem;background:#667eea;color:#fff;border-radius:0.375rem;transition:background 0.3s;}#buttons button:hover{background:#5a67d8;}section{padding:4rem 1rem;}</style>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-900 text-white scroll-smooth">
+<body class="bg-gray-900 text-white">
 
-  <div id="particles-js"></div>
+  <!-- Button Bar -->
+  <div class="flex justify-center space-x-4 py-6 bg-gray-800">
+    <button onclick="scrollTo('#experience')" class="btn">Experience</button>
+    <button onclick="scrollTo('#education')" class="btn">Education</button>
+    <button onclick="scrollTo('#certificates')" class="btn">Certificates</button>
+    <button onclick="scrollTo('#projects')" class="btn">Projects</button>
+  </div>
 
-  <header id="buttons" class="flex justify-center pt-10">
-    <button onclick="showSection('experience')">Experience</button>
-    <button onclick="showSection('education')">Education</button>
-    <button onclick="showSection('certificates')">Certificates</button>
-    <button onclick="showSection('projects')">Projects</button>
-  </header>
-
-  <section id="hero" class="h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-700 to-purple-800">
-    <h1 class="text-5xl md:text-7xl font-bold typewriter">Hi, I am Yogesh Yelewad</h1>
-    <p class="mt-4 text-2xl">Inventor</p>
-  </section>
-
-  <section id="experience" class="hidden" data-aos="fade-up">
-    <h2 class="text-4xl font-bold text-center">Experience</h2>
-    <ul class="mt-4 list-disc list-inside text-lg space-y-2">
-      <li>Vice Chairperson – Aakash Research Labs</li>
-      <li>R&D Advisor – IEEE SRMIST SSIT</li>
-      <li>Co-founder – Weebs.Hideout</li>
-    </ul>
-  </section>
-
-  <section id="education" class="hidden bg-gray-800" data-aos="fade-up">
-    <h2 class="text-4xl font-bold text-center">Education</h2>
-    <p class="mt-4 text-lg text-center">B.Tech in Electronics & Computer Engineering, SRMIST, Chennai (Expected 2025) 8</p>
-  </section>
-
-  <section id="certificates" class="hidden" data-aos="fade-up">
-    <h2 class="text-4xl font-bold text-center">Certificates</h2>
-    <ul class="mt-4 list-disc list-inside text-lg space-y-2">
-      <li><a href="https://lnkd.in/dpP29M4Y" class="text-blue-400">Complete Linux Training Course</a> 9</li>
-      <li><a href="https://lnkd.in/d7v5uqMF" class="text-blue-400">Microcontroller Embedded C Programming</a> 10</li>
-    </ul>
-  </section>
-
-  <section id="projects" class="hidden bg-gray-800" data-aos="fade-up">
-    <h2 class="text-4xl font-bold text-center">Projects</h2>
-    <ul class="mt-4 list-disc list-inside text-lg space-y-2">
-      <li>Organized IEEE SSIT “IoT for Biodegradable Waste” event (Sept 8, 2023) 11</li>
-      <li>Hosted sustainable tech workshops & built IoT prototypes</li>
-    </ul>
-  </section>
-
-  <section id="skills" class="py-16" data-aos="fade-up">
-    <h2 class="text-4xl font-bold text-center">Skills</h2>
-    <div class="max-w-3xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-      <span>IoT</span><span>Embedded Systems</span><span>JavaScript</span>
-      <span>Web Development</span><span>Sustainability</span><span>Leadership</span>
+  <!-- Hero Section -->
+  <section id="hero" class="h-screen flex flex-col justify-center items-center relative overflow-hidden">
+    <div id="tech-bg" class="absolute inset-0"></div>
+    <div class="relative z-10 text-center space-y-4">
+      <h1 class="text-5xl md:text-7xl font-bold">Hi, I am Yogesh Yelewad</h1>
+      <p class="text-2xl italic">Inventor</p>
     </div>
   </section>
 
-  <section id="contact" class="py-16 bg-gray-800" data-aos="fade-up">
-    <h2 class="text-4xl font-bold text-center">Contact</h2>
-    <p class="mt-4 text-lg text-center">📧 hello@yogeshyelewad.com</p>
-    <p class="mt-2 text-lg text-center">🔗 <a href="https://linkedin.com/in/yogeshyelewad" class="text-blue-400">LinkedIn</a></p>
-    <p class="mt-2 text-lg text-center">💻 <a href="https://github.com/yb0297" class="text-blue-400">GitHub</a></p>
+  <!-- Experience -->
+  <section id="experience" class="py-16 px-6" data-aos="fade-up">
+    <h2 class="text-4xl font-bold text-center mb-6">Experience</h2>
+    <ul class="max-w-3xl mx-auto list-disc list-inside space-y-4">
+      <li><strong>Vice Chairperson</strong> – Aakash Research Labs</li>
+      <li><strong>R&D Advisor</strong> – IEEE SRMIST SSIT</li>
+      <li><strong>Co‑founder</strong> – Weebs.Hideout</li>
+    </ul>
   </section>
 
-  <footer class="py-6 text-center">© 2025 Yogesh Yelewad</footer>
+  <!-- Education -->
+  <section id="education" class="py-16 px-6 bg-gray-800" data-aos="fade-up">
+    <h2 class="text-4xl font-bold text-center mb-6">Education</h2>
+    <ul class="max-w-3xl mx-auto list-disc list-inside space-y-4">
+      <li><strong>B.Tech in Electronics &amp; Computer Engineering</strong> – SRMIST, Chennai</li>
+    </ul>
+  </section>
 
+  <!-- Certificates -->
+  <section id="certificates" class="py-16 px-6" data-aos="fade-up">
+    <h2 class="text-4xl font-bold text-center mb-6">Certificates</h2>
+    <ul class="max-w-3xl mx-auto list-disc list-inside space-y-4">
+      <li>IoT Workshop – IEEE SSIT SSN (2023)</li>
+      <!-- Add more certificates here -->
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16 px-6 bg-gray-800" data-aos="fade-up">
+    <h2 class="text-4xl font-bold text-center mb-6">Projects</h2>
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="bg-gray-700 p-6 rounded">
+        <h3 class="text-2xl font-semibold">IoT for Biodegradable Waste</h3>
+        <p class="mt-2">Organized & led IEEE SSIT event on IoT transforming waste into wealth.</p>
+      </div>
+      <!-- Add more project entries as needed -->
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-16 px-6 text-center" data-aos="fade-up">
+    <h2 class="text-4xl font-bold mb-6">Skills</h2>
+    <div class="max-w-xl mx-auto space-y-4">
+      <div><span>IoT & Embedded Systems</span>
+        <div class="w-full bg-gray-700 rounded h-4 mt-1"><div class="bg-yellow-500 h-4 rounded animate-skill-90"></div></div>
+      </div>
+      <div><span>Research & Leadership</span>
+        <div class="w-full bg-gray-700 rounded h-4 mt-1"><div class="bg-yellow-500 h-4 rounded animate-skill-85"></div></div>
+      </div>
+      <div><span>JavaScript & Web Development</span>
+        <div class="w-full bg-gray-700 rounded h-4 mt-1"><div class="bg-yellow-500 h-4 rounded animate-skill-80"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 px-6 bg-gray-800 text-center" data-aos="fade-up">
+    <h2 class="text-4xl font-bold mb-4">Contact</h2>
+    <p>📧 <a href="mailto:hello@yogeshyelewad.com" class="text-blue-400">hello@yogeshyelewad.com</a></p>
+    <p>🔗 <a href="https://linkedin.com/in/yogeshyelewad" class="text-blue-400">LinkedIn</a></p>
+    <p>💻 <a href="https://github.com/yb0297" class="text-blue-400">GitHub</a></p>
+  </section>
+
+  <footer class="py-6 text-center text-sm">© 2025 Yogesh Yelewad</footer>
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script>
-    // Button Section Switch
-    function showSection(id){
-      document.querySelectorAll('section[id]').forEach(s => s.classList.add('hidden'));
-      document.getElementById(id).classList.remove('hidden');
-      document.getElementById(''+id).scrollIntoView({behavior:'smooth'});
-    }
-    AOS.init({duration:800, once:true});
-    particlesJS('particles-js',{
-      particles:{number:{value:60},size:{value:3},move:{speed:1},line_linked:{enable:true}},
-      interactivity:{events:{onhover:{enable:true,mode:'grab'}}}
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
