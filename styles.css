@@ -1,11 +1,18 @@
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
+/* Animate typing */
+@keyframes typing { from { width: 0 } to { width: 100% } }
 .animate-type {
-  width: 0;
-  overflow: hidden;
-  border-right: 2px solid white;
-  white-space: nowrap;
-  animation: typing 3s steps(30, end) forwards;
+  width: 0; overflow: hidden; border-right: 3px solid #fff; white-space: nowrap;
+  animation: typing 3s steps(30,end) forwards;
 }
+
+/* Skill bar animations */
+@keyframes skill90 { from { width:0 } to { width:90% } }
+@keyframes skill80 { from { width:0 } to { width:80% } }
+@keyframes skill85 { from { width:0 } to { width:85% } }
+.animate-skill-90 { animation: skill90 2s forwards; }
+.animate-skill-80 { animation: skill80 2s forwards; }
+.animate-skill-85 { animation: skill85 2s forwards; }
+
+/* Back to top button */
+#toTop { transition: opacity .3s; }
+#toTop.show { display: block; opacity:1; }
