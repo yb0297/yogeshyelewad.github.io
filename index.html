@@ -4,57 +4,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yogesh Yelewad | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
 </head>
-<body class="light-theme">
-  <header>
-    <div class="container">
-      <h1>Yogesh Yelewad</h1>
-      <button id="theme-toggle">🌙</button>
-    </div>
-  </header>
+<body class="bg-gray-900 text-white scroll-smooth">
 
-  <section class="hero gradient-bg">
-    <div class="container center-text">
-      <h2>Innovator | Tech Leader | Visionary</h2>
-      <p>Vice Chairperson at Aakash Research Labs</p>
+  <!-- Navbar -->
+  <nav class="fixed w-full bg-black bg-opacity-80 backdrop-blur z-50 shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Yogesh</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#hero" class="hover:text-yellow-400">Home</a></li>
+        <li><a href="#about" class="hover:text-yellow-400">About</a></li>
+        <li><a href="#experience" class="hover:text-yellow-400">Experience</a></li>
+        <li><a href="#projects" class="hover:text-yellow-400">Projects</a></li>
+        <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-indigo-700 to-purple-800">
+    <h2 class="text-4xl md:text-6xl font-bold mb-4 animate-type">Hi, I'm Yogesh</h2>
+    <p class="text-lg md:text-2xl max-w-xl mx-auto">Vice Chairperson at Aakash Research Labs | Innovator | Tech Leader</p>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 px-6 bg-gray-800" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-4">About Me</h3>
+      <p class="text-gray-300">I’m passionate about IoT, sustainability, and future-forward tech. I'm Vice Chairperson at Aakash Research Labs and former R&D advisor at IEEE SRMIST SSIT.</p>
     </div>
   </section>
 
-  <main class="container">
-    <section>
-      <h3>About Me</h3>
-      <p>I am passionate about IoT, sustainability, and building future-forward tech. Currently Vice Chairperson of Aakash Research Labs and former R&D advisor at IEEE SRMIST SSIT.</p>
-    </section>
-
-    <section>
-      <h3>Experience</h3>
-      <ul>
+  <!-- Experience -->
+  <section id="experience" class="py-20 px-6" data-aos="fade-right">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-3xl font-bold mb-6 text-center">Experience</h3>
+      <ul class="space-y-6 text-lg text-gray-200">
         <li><strong>Vice Chairperson</strong> - Aakash Research Labs</li>
         <li><strong>R&D Advisor</strong> - IEEE SRMIST SSIT</li>
         <li><strong>Co-founder</strong> - Weebs.Hideout</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h3>Projects</h3>
-      <p>Organized & led “IoT for Biodegradable Waste” events, hosted sustainable innovation workshops, and developed several IoT-based prototypes.</p>
-    </section>
+  <!-- Projects -->
+  <section id="projects" class="py-20 px-6 bg-gray-800" data-aos="fade-left">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-3xl font-bold mb-6 text-center">Projects</h3>
+      <p class="text-gray-300 text-center mb-4">Organized “IoT for Biodegradable Waste” events, hosted innovation workshops, and developed several IoT prototypes.</p>
+    </div>
+  </section>
 
-    <section>
-      <h3>Contact Me</h3>
-      <ul>
-        <li><a href="mailto:hello@yogeshyelewad.com">📧 Email</a></li>
-        <li><a href="https://www.linkedin.com/in/yogeshyelewad" target="_blank">🔗 LinkedIn</a></li>
-        <li><a href="https://github.com/yb0297" target="_blank">💻 GitHub</a></li>
-      </ul>
-    </section>
-  </main>
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-6" data-aos="zoom-in">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-4">Contact Me</h3>
+      <p class="text-gray-300">📧 <a href="mailto:hello@yogeshyelewad.com" class="text-blue-400">hello@yogeshyelewad.com</a></p>
+      <p class="text-gray-300 mt-2">🔗 <a href="https://linkedin.com/in/yogeshyelewad" class="text-blue-400">LinkedIn</a></p>
+      <p class="text-gray-300 mt-2">💻 <a href="https://github.com/yb0297" class="text-blue-400">GitHub</a></p>
+    </div>
+  </section>
 
-  <footer class="gradient-footer">
-    <p>© 2025 Yogesh Yelewad</p>
+  <!-- Footer -->
+  <footer class="bg-black text-center text-sm py-6">
+    © 2025 Yogesh Yelewad — Powered by 💡 & Code
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
