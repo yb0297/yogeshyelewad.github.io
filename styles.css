@@ -1,68 +1,23 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+.btn {
+  @apply px-4 py-2 bg-yellow-500 hover:bg-yellow-600 rounded font-semibold transition;
 }
-
-.hero {
-    background-image: url('techno-background.jpg'); /* Replace with your background image */
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 100px 0;
+@keyframes typing { from { width: 0 } to { width: 100% } }
+.animate-type {
+  width: 0; overflow: hidden; border-right: 3px solid #fff; white-space: nowrap;
+  animation: typing 3s steps(30,end) forwards;
 }
-
-nav {
-    text-align: center;
-    padding: 20px;
+#tech-bg {
+  background: linear-gradient(45deg, rgba(50,50,80,0.8), rgba(80,50,100,0.8));
+  mix-blend-mode: overlay;
+  animation: bgmove 10s infinite alternate;
 }
-
-button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
+@keyframes bgmove {
+  from { transform: scale(1) rotate(0deg); }
+  to { transform: scale(1.1) rotate(3deg); }
 }
-
-button:hover {
-    background-color: #0056b3;
-}
-
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 40px;
-}
-
-.hidden {
-    display: none;
-}
-
-#skills ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#skills li {
-    display: inline-block;
-    margin: 5px;
-    padding: 5px 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-}
-
-@media (max-width: 600px) {
-    nav {
-        display: flex;
-        flex-direction: column;
-    }
-
-    button {
-        margin: 5px 0;
-    }
-}
+@keyframes skill90 { from { width:0 } to { width:90% } }
+@keyframes skill85 { from { width:0 } to { width:85% } }
+@keyframes skill80 { from { width:0 } to { width:80% } }
+.animate-skill-90 { animation: skill90 2s forwards; }
+.animate-skill-85 { animation: skill85 2s forwards; }
+.animate-skill-80 { animation: skill80 2s forwards; }
