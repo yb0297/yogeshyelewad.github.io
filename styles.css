@@ -1,14 +1,81 @@
-@layer base {
-  body.dark {
-    @apply bg-gray-900 text-gray-100;
-  }
-  body.dark header, body.dark footer {
-    @apply bg-gray-800;
-  }
-  body.dark a {
-    @apply text-blue-400;
-  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
 }
-html {
-  scroll-behavior: smooth;
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  background: #ffffff;
+  color: #333;
+  padding: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero {
+  padding: 80px 20px;
+  color: white;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.gradient-footer {
+  background: linear-gradient(135deg, #232526, #414345);
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+h1, h2, h3 {
+  margin-bottom: 10px;
+}
+
+section {
+  margin-top: 40px;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.center-text {
+  text-align: center;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-theme header {
+  background: #1e1e1e;
+  color: white;
+}
+
+body.dark-theme a {
+  color: #9f7aea;
 }
