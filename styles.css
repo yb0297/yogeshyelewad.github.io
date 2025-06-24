@@ -1,0 +1,14 @@
+@layer base {
+  body.dark {
+    @apply bg-gray-900 text-gray-100;
+  }
+  body.dark header, body.dark footer {
+    @apply bg-gray-800;
+  }
+  body.dark a {
+    @apply text-blue-400;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
