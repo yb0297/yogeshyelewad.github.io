@@ -971,3 +971,18 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+
+/* Hero Section Styles */
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.hero-img {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
