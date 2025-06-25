@@ -2,41 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yogesh Yelewad - Portfolio</title>
-  <link rel="stylesheet" href="assets/style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yogesh Yelewad – Inventor • Innovator</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="home">
-  <header>
+<body>
+  <div id="bg-overlay"></div>
+  <header class="navbar">
+    <div class="logo">Yogesh Yelewad</div>
     <nav>
-      <a href="experience.html">Experience</a>
-      <a href="education.html">Education</a>
-      <a href="certificates.html">Certificates</a>
-      <a href="projects.html">Projects</a>
+      <button data-target="experience">Experience</button>
+      <button data-target="education">Education</button>
+      <button data-target="certificates">Certificates</button>
+      <button data-target="projects">Projects</button>
     </nav>
+    <button id="theme-toggle">🌙</button>
   </header>
 
-  <section class="intro">
-    <h1>Hi, I am <span>Yogesh Yelewad</span></h1>
-    <h2>Inventor</h2>
-  </section>
+  <main id="main-content">
+    <section class="intro screen">
+      <h1>Hi, I’m <span>Yogesh Yelewad</span></h1>
+      <h2>Inventor • Problem‑Solver</h2>
+      <p>Building tomorrow’s tech, today.</p>
+      <a href="#contact" class="cta">Contact Me</a>
+    </section>
 
-  <section class="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>IoT & Electronics</li>
-      <li>Python & Machine Learning</li>
-      <li>Visible Light Communication</li>
-      <li>Research & Development</li>
-      <li>Leadership & Event Coordination</li>
-    </ul>
-  </section>
+    <section id="experience" class="data-section"></section>
+    <section id="education" class="data-section"></section>
+    <section id="certificates" class="data-section"></section>
+    <section id="projects" class="data-section"></section>
 
-  <footer>
-    <p>📧 <a href="mailto:yogeshyelewad@gmail.com">yogeshyelewad@gmail.com</a></p>
-    <p>📞 +91 00000 00000</p>
-    <p>🌐 <a href="https://www.linkedin.com/in/yogeshyelewad" target="_blank">LinkedIn</a></p>
-    <p>📍 Nanded, Maharashtra</p>
-  </footer>
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skill-grid">
+        <!-- dynamically inserted -->
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Get in Touch</h2>
+      <ul>
+        <li>Email: <a href="mailto:yogeshyelewad@gmail.com">yogeshyelewad@gmail.com</a></li>
+        <li>Phone: +91 00000 00000</li>
+        <li>LinkedIn: <a href="#" target="_blank">linkedin.com/in/yogeshyelewad</a></li>
+        <li>Location: Nanded, Maharashtra, India</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
