@@ -25,8 +25,8 @@ window.addEventListener('scroll', () => {
 
 // Typing effect for hero section
 const typingTexts = [
-    'Electronics & IoT Expert',
-    'Research & Development Leader',
+    'Co-Founder of Weebs Hideout',
+    'Ex-Research & Development Advisor',
     'Innovation Enthusiast',
     'Vice Chairperson at Aakash Research Labs'
 ];
