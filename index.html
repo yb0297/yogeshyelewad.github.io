@@ -27,11 +27,27 @@
     <link rel="preload" as="image" href="public/assets/Project Pictures .jpg">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="loading-text">Yogesh Yelewad</span>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+            </div>
+            <div class="loading-particles"></div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">YBY</a>
+                <a href="#home">
+                    <span class="logo-text">Yogesh Yelewad</span>
+                    <div class="logo-underline"></div>
+                </a>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -57,6 +73,12 @@
             <div class="hero-shape shape-2"></div>
             <div class="hero-shape shape-3"></div>
             <div class="hero-particles"></div>
+            <div class="floating-orbs">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+                <div class="orb orb-4"></div>
+            </div>
         </div>
         <div class="container">
             <div class="hero-content">
@@ -66,7 +88,7 @@
                         <div class="badge-pulse"></div>
                     </div>
                     <h1 class="hero-title">
-                        Hi, I'm <span class="gradient-text">Yogesh Yelewad</span>
+                        Hi, I'm <span class="gradient-text-animated">Yogesh Yelewad</span>
                     </h1>
                     <div class="hero-subtitle">
                         <span class="typing-text"></span>
@@ -78,26 +100,37 @@
                     </p>
                     <div class="hero-stats">
                         <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
                             <div class="stat-number" data-count="2">0</div>
                             <div class="stat-label">Years Experience</div>
                         </div>
                         <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
                             <div class="stat-number" data-count="5">0</div>
                             <div class="stat-label">Projects</div>
                         </div>
                         <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
                             <div class="stat-number" data-count="2">0</div>
                             <div class="stat-label">Publications</div>
                         </div>
                     </div>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">
+                        <a href="#contact" class="btn btn-primary btn-glow">
                             <span>Get In Touch</span>
                             <i class="fas fa-arrow-right"></i>
+                            <div class="btn-ripple"></div>
                         </a>
-                        <a href="#projects" class="btn btn-secondary">
+                        <a href="#projects" class="btn btn-secondary btn-glow">
                             <span>View Projects</span>
                             <i class="fas fa-external-link-alt"></i>
+                            <div class="btn-ripple"></div>
                         </a>
                     </div>
                 </div>
@@ -106,6 +139,7 @@
                         <div class="profile-image">
                             <img src="public/assets/hero.jpg" alt="Yogesh Yelewad" loading="eager">
                             <div class="image-overlay"></div>
+                            <div class="image-border"></div>
                         </div>
                         <div class="floating-icons">
                             <div class="floating-icon icon-1" data-tooltip="Electronics"><i class="fas fa-microchip"></i></div>
@@ -114,9 +148,20 @@
                             <div class="floating-icon icon-4" data-tooltip="Research"><i class="fas fa-cog"></i></div>
                         </div>
                         <div class="profile-glow"></div>
+                        <div class="profile-rings">
+                            <div class="ring ring-1"></div>
+                            <div class="ring ring-2"></div>
+                            <div class="ring ring-3"></div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <span class="scroll-text">Scroll to explore</span>
         </div>
     </section>
 
@@ -124,7 +169,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title">About <span class="gradient-text-animated">Yogesh Yelewad</span></h2>
                 <p class="section-subtitle">Passionate about innovation and technology</p>
                 <div class="section-divider"></div>
             </div>
@@ -132,7 +177,7 @@
                 <div class="about-text">
                     <div class="about-intro">
                         <p class="intro-text">
-                            I am a dedicated professional with extensive experience in Electronics and IoT. 
+                            I am <strong>Yogesh Yelewad</strong>, a dedicated professional with extensive experience in Electronics and IoT. 
                             Currently serving as the Vice Chairperson of Aakash Research Labs, I lead innovative 
                             research initiatives and drive technological advancement in emerging fields.
                         </p>
@@ -173,6 +218,7 @@
                                 <p>Circuit design, sensor integration, embedded systems</p>
                                 <div class="skill-progress">
                                     <div class="skill-bar" data-width="95"></div>
+                                    <span class="skill-percentage">95%</span>
                                 </div>
                             </div>
                         </div>
@@ -183,6 +229,7 @@
                                 <p>Research methodology, innovation, project management</p>
                                 <div class="skill-progress">
                                     <div class="skill-bar" data-width="90"></div>
+                                    <span class="skill-percentage">90%</span>
                                 </div>
                             </div>
                         </div>
@@ -193,6 +240,7 @@
                                 <p>Team management, strategic planning, Mentoring</p>
                                 <div class="skill-progress">
                                     <div class="skill-bar" data-width="88"></div>
+                                    <span class="skill-percentage">88%</span>
                                 </div>
                             </div>
                         </div>
@@ -203,6 +251,7 @@
                                 <p>C/C++, Python, Arduino, embedded programming</p>
                                 <div class="skill-progress">
                                     <div class="skill-bar" data-width="85"></div>
+                                    <span class="skill-percentage">85%</span>
                                 </div>
                             </div>
                         </div>
@@ -711,9 +760,10 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" placeholder="Tell me about your project or inquiry..." rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">
+                        <button type="submit" class="btn btn-primary btn-full btn-glow">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
+                            <div class="btn-ripple"></div>
                         </button>
                     </form>
                 </div>
