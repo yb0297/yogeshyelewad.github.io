@@ -10,7 +10,7 @@
 
 <!-- Open Graph (for social sharing) -->
 <meta property="og:title" content="Yogesh Yelewad | Portfolio">
-<meta property="og:description" content="Explore Yogesh Yelewad’s projects and web development portfolio.">
+<meta property="og:description" content="Explore Yogesh Yelewad's projects and web development portfolio.">
 <meta property="og:url" content="https://yogeshyelewad.github.io">
 <meta property="og:type" content="website">
 
@@ -20,7 +20,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Preload critical images -->
     <link rel="preload" as="image" href="public/assets/hero.jpg">
+    <link rel="preload" as="image" href="public/assets/light.jpg">
+    <link rel="preload" as="image" href="public/assets/fake news.jpg">
+    <link rel="preload" as="image" href="public/assets/Project Pictures .jpg">
 </head>
 <body>
     <!-- Navigation -->
@@ -74,7 +78,7 @@
                 <div class="hero-image">
                     <div class="profile-card">
                         <div class="profile-image">
-                            <img src="public/assets/hero.jpg" alt="Yogesh Yelewad">
+                            <img src="public/assets/hero.jpg" alt="Yogesh Yelewad" loading="eager">
                         </div>
                         <div class="floating-icons">
                             <div class="floating-icon icon-1"><i class="fas fa-microchip"></i></div>
@@ -293,7 +297,7 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="fake news.jpg" alt="Fake News Detection">
+                        <img src="public/assets/fake news.jpg" alt="Fake News Detection" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Fake News Detection using Bi-RNN</h3>
@@ -307,7 +311,7 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="public/assets/light.jpg" alt="Visible Light Communication">
+                        <img src="public/assets/light.jpg" alt="Visible Light Communication" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Visible Light Communication</h3>
@@ -321,7 +325,7 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="public/assets/Project Pictures .jpg" alt="Metro Light Control">
+                        <img src="public/assets/Project Pictures .jpg" alt="Metro Light Control" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Hardware EHOS Mini Project</h3>

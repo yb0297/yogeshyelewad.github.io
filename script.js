@@ -160,18 +160,34 @@ if (contactForm) {
     });
 }
 
-// Add loading animation for images
+// Enhanced image loading with proper error handling
 document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('img');
     
     images.forEach(img => {
+        // Set initial state
+        if (!img.hasAttribute('loading') || img.getAttribute('loading') !== 'eager') {
+            img.style.opacity = '0';
+        }
+        
+        // Handle successful load
         img.addEventListener('load', () => {
             img.style.opacity = '1';
+            img.classList.add('loaded');
         });
         
-        // Add loading state
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.3s ease';
+        // Handle load errors
+        img.addEventListener('error', () => {
+            console.warn(`Failed to load image: ${img.src}`);
+            // You could set a fallback image here if needed
+            img.style.opacity = '0.5';
+        });
+        
+        // For images that might already be cached
+        if (img.complete && img.naturalHeight !== 0) {
+            img.style.opacity = '1';
+            img.classList.add('loaded');
+        }
     });
 });
 
