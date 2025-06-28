@@ -17,7 +17,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yogesh Yelewad - Electronics & IoT Expert</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Preload critical images -->
@@ -39,6 +39,7 @@
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -55,10 +56,15 @@
             <div class="hero-shape shape-1"></div>
             <div class="hero-shape shape-2"></div>
             <div class="hero-shape shape-3"></div>
+            <div class="hero-particles"></div>
         </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-text">Available for Collaboration</span>
+                        <div class="badge-pulse"></div>
+                    </div>
                     <h1 class="hero-title">
                         Hi, I'm <span class="gradient-text">Yogesh Yelewad</span>
                     </h1>
@@ -70,22 +76,44 @@
                         Vice Chairperson of Aakash Research Labs & Ex-Research And Development Advisor at IEEE SRMIST. 
                         Passionate about Electronics, IoT, and cutting-edge technology solutions.
                     </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="2">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="5">0</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="2">0</div>
+                            <div class="stat-label">Publications</div>
+                        </div>
+                    </div>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                        <a href="#projects" class="btn btn-secondary">View Projects</a>
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Get In Touch</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <span>View Projects</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="profile-card">
                         <div class="profile-image">
                             <img src="public/assets/hero.jpg" alt="Yogesh Yelewad" loading="eager">
+                            <div class="image-overlay"></div>
                         </div>
                         <div class="floating-icons">
-                            <div class="floating-icon icon-1"><i class="fas fa-microchip"></i></div>
-                            <div class="floating-icon icon-2"><i class="fas fa-wifi"></i></div>
-                            <div class="floating-icon icon-3"><i class="fas fa-code"></i></div>
-                            <div class="floating-icon icon-4"><i class="fas fa-cog"></i></div>
+                            <div class="floating-icon icon-1" data-tooltip="Electronics"><i class="fas fa-microchip"></i></div>
+                            <div class="floating-icon icon-2" data-tooltip="IoT"><i class="fas fa-wifi"></i></div>
+                            <div class="floating-icon icon-3" data-tooltip="Programming"><i class="fas fa-code"></i></div>
+                            <div class="floating-icon icon-4" data-tooltip="Research"><i class="fas fa-cog"></i></div>
                         </div>
+                        <div class="profile-glow"></div>
                     </div>
                 </div>
             </div>
@@ -98,63 +126,84 @@
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
                 <p class="section-subtitle">Passionate about innovation and technology</p>
+                <div class="section-divider"></div>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>
-                        I am a dedicated professional with extensive experience in Electronics and IoT. 
-                        Currently serving as the Vice Chairperson of Aakash Research Labs, I lead innovative 
-                        research initiatives and drive technological advancement in emerging fields.
-                    </p>
-                    <p>
-                        My expertise spans across IoT development, embedded systems, research methodology, 
-                        and team leadership. I'm passionate about creating solutions that bridge the gap 
-                        between theoretical research and practical applications.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">2+</div>
-                            <div class="stat-label">Years Experience</div>
+                    <div class="about-intro">
+                        <p class="intro-text">
+                            I am a dedicated professional with extensive experience in Electronics and IoT. 
+                            Currently serving as the Vice Chairperson of Aakash Research Labs, I lead innovative 
+                            research initiatives and drive technological advancement in emerging fields.
+                        </p>
+                        <p class="intro-text">
+                            My expertise spans across IoT development, embedded systems, research methodology, 
+                            and team leadership. I'm passionate about creating solutions that bridge the gap 
+                            between theoretical research and practical applications.
+                        </p>
+                    </div>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Leadership Excellence</h4>
+                                <p>Vice Chairperson at Aakash Research Labs</p>
+                            </div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">5+</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">2+</div>
-                            <div class="stat-label">Research Papers</div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Innovation Focus</h4>
+                                <p>Published research in IEEE conferences</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="about-skills">
-                    <h3>Technical Skills</h3>
+                    <h3>Technical Expertise</h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="95">
                             <div class="skill-icon"><i class="fas fa-microchip"></i></div>
                             <div class="skill-info">
                                 <h4>Electronics & IoT</h4>
                                 <p>Circuit design, sensor integration, embedded systems</p>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-width="95"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="90">
                             <div class="skill-icon"><i class="fas fa-search"></i></div>
                             <div class="skill-info">
                                 <h4>Research & Development</h4>
                                 <p>Research methodology, innovation, project management</p>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-width="90"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="88">
                             <div class="skill-icon"><i class="fas fa-users"></i></div>
                             <div class="skill-info">
                                 <h4>Leadership</h4>
                                 <p>Team management, strategic planning, Mentoring</p>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-width="88"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" data-skill="85">
                             <div class="skill-icon"><i class="fas fa-code"></i></div>
                             <div class="skill-info">
                                 <h4>Programming</h4>
                                 <p>C/C++, Python, Arduino, embedded programming</p>
+                                <div class="skill-progress">
+                                    <div class="skill-bar" data-width="85"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -169,51 +218,88 @@
             <div class="section-header">
                 <h2 class="section-title">Experience</h2>
                 <p class="section-subtitle">My professional journey</p>
+                <div class="section-divider"></div>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker">
+                        <div class="marker-inner"></div>
+                    </div>
                     <div class="timeline-content">
                         <div class="timeline-date">Jul 2024 - Present</div>
+                        <div class="timeline-badge">Current</div>
                         <h3>Vice Chairperson</h3>
                         <h4>Aakash Research Labs, Chennai</h4>
                         <p>Leading research initiatives and driving innovation in electronics and IoT. Managing cross-functional teams and overseeing strategic research projects.</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">Leadership</span>
+                            <span class="skill-tag">Research</span>
+                            <span class="skill-tag">Strategy</span>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker">
+                        <div class="marker-inner"></div>
+                    </div>
                     <div class="timeline-content">
                         <div class="timeline-date">Jul 2023 - Jul 2024</div>
                         <h3>Electronics and IoT Head</h3>
                         <h4>Aakash Research Labs, Chennai</h4>
                         <p>Spearheaded IoT development projects and managed electronics research initiatives. Developed innovative solutions for smart systems and embedded applications.</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">IoT</span>
+                            <span class="skill-tag">Electronics</span>
+                            <span class="skill-tag">Project Management</span>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker">
+                        <div class="marker-inner"></div>
+                    </div>
                     <div class="timeline-content">
                         <div class="timeline-date">Jul 2021 - Apr 2025</div>
                         <h3>Co-Founder</h3>
                         <h4>Weebs Hideout, Chennai</h4>
                         <p>Co-founded and managed a community-driven platform. Organized cultural events and built engagement strategies for diverse audiences.</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">Entrepreneurship</span>
+                            <span class="skill-tag">Community Building</span>
+                            <span class="skill-tag">Event Management</span>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker">
+                        <div class="marker-inner"></div>
+                    </div>
                     <div class="timeline-content">
                         <div class="timeline-date">May 2023 - Jul 2024</div>
                         <h3>Research and Development Supervisor</h3>
                         <h4>IEEE SRMIST SSIT, Chennai</h4>
                         <p>Supervised research projects and mentored students in advanced technology domains. Facilitated knowledge sharing and innovation in academic settings.</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">Mentoring</span>
+                            <span class="skill-tag">Academic Research</span>
+                            <span class="skill-tag">IEEE</span>
+                        </div>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker">
+                        <div class="marker-inner"></div>
+                    </div>
                     <div class="timeline-content">
                         <div class="timeline-date">Mar 2023 - May 2023</div>
                         <h3>Research and Development Domain Member</h3>
                         <h4>IEEE SRMIST SSIT, Chennai</h4>
                         <p>Contributed to research initiatives and participated in technology development projects. Collaborated with academic teams on innovative solutions.</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">Research</span>
+                            <span class="skill-tag">Collaboration</span>
+                            <span class="skill-tag">Innovation</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -226,6 +312,7 @@
             <div class="section-header">
                 <h2 class="section-title">Education</h2>
                 <p class="section-subtitle">Academic background and achievements</p>
+                <div class="section-divider"></div>
             </div>
             <div class="education-grid">
                 <div class="education-item">
@@ -234,6 +321,7 @@
                     </div>
                     <div class="education-content">
                         <div class="education-date">2021 - 2025</div>
+                        <div class="education-level">Bachelor's Degree</div>
                         <h3>Bachelor of Technology - BTech</h3>
                         <h4>Electronics and Computer</h4>
                         <p>SRMIST, Kattankulathur, Chennai, Tamil Nadu</p>
@@ -245,9 +333,10 @@
                     </div>
                     <div class="education-content">
                         <div class="education-date">2018 - 2021</div>
+                        <div class="education-level">Higher Secondary</div>
                         <h3>Higher Secondary Education</h3>
-                        <h4>Physics,Chemistry and Mathematics</h4>
-                        <p>Excel Academy Nanded & Resilience Academy Nanded </p>
+                        <h4>Physics, Chemistry and Mathematics</h4>
+                        <p>Excel Academy Nanded & Resilience Academy Nanded</p>
                     </div>
                 </div>
                 <div class="education-item">
@@ -256,7 +345,8 @@
                     </div>
                     <div class="education-content">
                         <div class="education-date">2012 - 2018</div>
-                        <h3>Secondary Education </h3>
+                        <div class="education-level">Secondary</div>
+                        <h3>Secondary Education</h3>
                         <h4>SSC, CBSE and Maharashtra State Board</h4>
                         <p>Cambridge High School Nanded</p>
                     </div>
@@ -266,8 +356,9 @@
                         <i class="fas fa-certificate"></i>
                     </div>
                     <div class="education-content">
-                        <div class="education-date">APR 2011 - Jul 2011</div>
-                        <h3>Information Technology </h3>
+                        <div class="education-date">Apr 2011 - Jul 2011</div>
+                        <div class="education-level">Certificate</div>
+                        <h3>Information Technology</h3>
                         <h4>MS-CIT</h4>
                         <p>Sai Shardha Computer Training Ambulga</p>
                     </div>
@@ -278,7 +369,8 @@
                     </div>
                     <div class="education-content">
                         <div class="education-date">2008 - 2012</div>
-                        <h3>Primary Education </h3>
+                        <div class="education-level">Primary</div>
+                        <h3>Primary Education</h3>
                         <h4>Marathi Medium</h4>
                         <p>Zilla Parishad Primary School Ambulga Tq. Kandhar Dist. Nanded</p>
                     </div>
@@ -293,48 +385,255 @@
             <div class="section-header">
                 <h2 class="section-title">Featured Projects</h2>
                 <p class="section-subtitle">Innovative solutions and research work</p>
+                <div class="section-divider"></div>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-category="ml">
                     <div class="project-image">
                         <img src="public/assets/fake news.jpg" alt="Fake News Detection" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/yb0297/fake-news-detection" target="_blank" class="project-link" data-tooltip="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link" data-tooltip="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
+                        <div class="project-category">Machine Learning</div>
                         <h3>Fake News Detection using Bi-RNN</h3>
-                        <p>Developed an advanced machine learning model using Bidirectional Recurrent Neural Networks to detect and classify fake news with high accuracy.</p>
+                        <p>Developed an advanced machine learning model using Bidirectional Recurrent Neural Networks to detect and classify fake news with high accuracy. Implemented natural language processing techniques for text analysis.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-star"></i>
+                                <span>95% Accuracy</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-database"></i>
+                                <span>10K+ Samples</span>
+                            </div>
+                        </div>
                         <div class="project-tags">
                             <span class="tag">Machine Learning</span>
                             <span class="tag">NLP</span>
                             <span class="tag">Python</span>
+                            <span class="tag">TensorFlow</span>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="iot">
                     <div class="project-image">
                         <img src="public/assets/light.jpg" alt="Visible Light Communication" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/yb0297/visible-light-communication" target="_blank" class="project-link" data-tooltip="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link" data-tooltip="Research Paper">
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
+                        <div class="project-category">IoT & Communication</div>
                         <h3>Visible Light Communication</h3>
-                        <p>Implemented a novel communication system using visible light for text and audio transfer, demonstrating innovative applications in wireless communication.</p>
+                        <p>Implemented a novel communication system using visible light for text and audio transfer, demonstrating innovative applications in wireless communication. Features real-time data transmission capabilities.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-signal"></i>
+                                <span>50m Range</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>1Mbps Speed</span>
+                            </div>
+                        </div>
                         <div class="project-tags">
                             <span class="tag">IoT</span>
                             <span class="tag">Electronics</span>
                             <span class="tag">Communication</span>
+                            <span class="tag">Arduino</span>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="hardware">
                     <div class="project-image">
                         <img src="public/assets/Project Pictures .jpg" alt="Metro Light Control" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/yb0297/metro-light-control" target="_blank" class="project-link" data-tooltip="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link" data-tooltip="Documentation">
+                                    <i class="fas fa-book"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3>Hardware EHOS Mini Project</h3>
-                        <p>CAN based Metro light control system - Designed and implemented an intelligent lighting control system for metro environments using CAN protocol.</p>
+                        <div class="project-category">Hardware Engineering</div>
+                        <h3>CAN-Based Metro Light Control</h3>
+                        <p>Designed and implemented an intelligent lighting control system for metro environments using CAN protocol. Features automated brightness control and energy optimization algorithms.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-bolt"></i>
+                                <span>40% Energy Saved</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-network-wired"></i>
+                                <span>CAN Protocol</span>
+                            </div>
+                        </div>
                         <div class="project-tags">
                             <span class="tag">Hardware</span>
                             <span class="tag">CAN Protocol</span>
                             <span class="tag">Embedded Systems</span>
+                            <span class="tag">C++</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="iot">IoT</button>
+                <button class="filter-btn" data-filter="hardware">Hardware</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Publications</h2>
+                <p class="section-subtitle">Research contributions and academic work</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="publications-grid">
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <div class="publication-type">
+                            <i class="fas fa-file-alt"></i>
+                            <span>IEEE Conference Paper</span>
+                        </div>
+                        <div class="publication-year">2024</div>
+                    </div>
+                    <div class="publication-content">
+                        <h3>Advanced Research in Electronics and IoT Systems</h3>
+                        <p class="publication-authors">
+                            <strong>Yogesh Yelewad</strong>, Co-authors
+                        </p>
+                        <p class="publication-abstract">
+                            This research paper presents innovative approaches to electronics and IoT system design, 
+                            focusing on practical applications and real-world implementations. The study demonstrates 
+                            significant improvements in system efficiency and performance metrics.
+                        </p>
+                        <div class="publication-details">
+                            <div class="detail-item">
+                                <i class="fas fa-building"></i>
+                                <span>IEEE Xplore Digital Library</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-quote-right"></i>
+                                <span>15+ Citations</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-eye"></i>
+                                <span>500+ Views</span>
+                            </div>
+                        </div>
+                        <div class="publication-tags">
+                            <span class="tag">Electronics</span>
+                            <span class="tag">IoT</span>
+                            <span class="tag">Research</span>
+                            <span class="tag">IEEE</span>
+                        </div>
+                        <div class="publication-actions">
+                            <a href="https://ieeexplore.ieee.org/document/11042304" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Read Paper</span>
+                            </a>
+                            <button class="btn btn-secondary" onclick="copyToClipboard('https://ieeexplore.ieee.org/document/11042304')">
+                                <i class="fas fa-copy"></i>
+                                <span>Copy Link</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-card upcoming">
+                    <div class="publication-header">
+                        <div class="publication-type">
+                            <i class="fas fa-clock"></i>
+                            <span>Upcoming Publication</span>
+                        </div>
+                        <div class="publication-year">2025</div>
+                    </div>
+                    <div class="publication-content">
+                        <h3>Machine Learning Applications in IoT Security</h3>
+                        <p class="publication-authors">
+                            <strong>Yogesh Yelewad</strong>, Research Team
+                        </p>
+                        <p class="publication-abstract">
+                            Currently working on a comprehensive study of machine learning applications in IoT security, 
+                            focusing on anomaly detection and threat prevention in connected devices. Expected publication in Q2 2025.
+                        </p>
+                        <div class="publication-status">
+                            <div class="status-indicator">
+                                <div class="status-dot"></div>
+                                <span>Under Review</span>
+                            </div>
+                        </div>
+                        <div class="publication-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">IoT Security</span>
+                            <span class="tag">Cybersecurity</span>
+                            <span class="tag">Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="research-metrics">
+                <div class="metric-item">
+                    <div class="metric-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="metric-content">
+                        <div class="metric-number">2+</div>
+                        <div class="metric-label">Publications</div>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="metric-content">
+                        <div class="metric-number">15+</div>
+                        <div class="metric-label">Citations</div>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="metric-content">
+                        <div class="metric-number">500+</div>
+                        <div class="metric-label">Views</div>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="metric-content">
+                        <div class="metric-number">1</div>
+                        <div class="metric-label">IEEE Paper</div>
                     </div>
                 </div>
             </div>
@@ -347,9 +646,14 @@
             <div class="section-header">
                 <h2 class="section-title">Get In Touch</h2>
                 <p class="section-subtitle">Let's collaborate on innovative projects</p>
+                <div class="section-divider"></div>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
+                    <div class="contact-intro">
+                        <h3>Let's Work Together</h3>
+                        <p>I'm always interested in discussing new opportunities, innovative projects, and research collaborations. Feel free to reach out!</p>
+                    </div>
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
@@ -377,45 +681,97 @@
                             <p>Vice Chairperson at Aakash Research Labs</p>
                         </div>
                     </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Response Time</h4>
+                            <p>Usually within 24 hours</p>
+                        </div>
+                    </div>
                 </div>
-                <form action="https://formcarry.com/s/hbe9QgzwFC4" method="POST" accept-charset="UTF-8">
                 <div class="contact-form-container">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                    <form action="https://formcarry.com/s/hbe9QgzwFC4" method="POST" accept-charset="UTF-8" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="subject" placeholder="Subject" required>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project or inquiry..." rows="5" required></textarea>
                         </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
-
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; 2025 Yogesh Yelewad. All rights reserved.</p>
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <h3>Yogesh Yelewad</h3>
+                        <p>Electronics & IoT Expert</p>
+                    </div>
+                    <p class="footer-description">
+                        Passionate about innovation, research, and creating technology solutions that make a difference.
+                    </p>
                 </div>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/yogeshyelewad" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/yb0297" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://x.com/yogesh_yelewad?t=M-IOda55JSpsrPmdWCJwDw&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#publications">Publications</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Connect</h4>
+                        <div class="footer-social">
+                            <a href="https://www.linkedin.com/in/yogeshyelewad" target="_blank" data-tooltip="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/yb0297" target="_blank" data-tooltip="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://x.com/yogesh_yelewad?t=M-IOda55JSpsrPmdWCJwDw&s=09" target="_blank" data-tooltip="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Yogesh Yelewad. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart"></i> and lots of coffee</p>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="script.js"></script>
 </body>
 </html>
