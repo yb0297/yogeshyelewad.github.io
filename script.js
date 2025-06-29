@@ -175,10 +175,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, 1000);
 });
 
-// Enhanced contact form handling
-const contactForm = document.querySelector('.contact-form');
+// Enhanced contact form handling with AJAX
+const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         // Get form data
@@ -208,15 +208,49 @@ if (contactForm) {
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
         submitBtn.disabled = true;
         
-        // Simulate API call (replace with actual form submission)
-        setTimeout(() => {
-            showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-            this.reset();
+        try {
+            // Submit to FormCarry using fetch
+            const response = await fetch('https://formcarry.com/s/hbe9QgzwFC4', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                // Success - show notification and reset form
+                showNotification(`Thank you ${name}! Your message has been sent successfully. I'll get back to you soon.`, 'success');
+                this.reset(); // Clear the form
+                
+                // Store success state
+                localStorage.setItem('contactFormSubmitted', 'true');
+                localStorage.setItem('contactFormName', name);
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showNotification('Sorry, there was an error sending your message. Please try again or contact me directly.', 'error');
+        } finally {
+            // Reset button
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-        }, 2000);
+        }
     });
 }
+
+// Check for successful form submission on page load
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('contactFormSubmitted') === 'true') {
+        const name = localStorage.getItem('contactFormName') || 'there';
+        showNotification(`Welcome back! Your message was sent successfully, ${name}. I'll respond soon!`, 'success');
+        
+        // Clear the stored state
+        localStorage.removeItem('contactFormSubmitted');
+        localStorage.removeItem('contactFormName');
+    }
+});
 
 // Enhanced notification system with 3D effects
 function showNotification(message, type = 'info') {
@@ -249,6 +283,7 @@ function showNotification(message, type = 'info') {
             justify-content: space-between;
             gap: 15px;
             min-width: 300px;
+            max-width: 500px;
             animation: slideInRight3D 0.3s ease;
             transform-style: preserve-3d;
         }
@@ -271,6 +306,7 @@ function showNotification(message, type = 'info') {
             align-items: center;
             gap: 10px;
             transform: translateZ(10px);
+            flex: 1;
         }
         
         .notification-success .notification-content i { color: #10B981; }
@@ -285,6 +321,7 @@ function showNotification(message, type = 'info') {
             font-size: 14px;
             transform: translateZ(5px);
             transition: transform 0.3s ease;
+            padding: 5px;
         }
         
         .notification-close:hover {
@@ -299,6 +336,17 @@ function showNotification(message, type = 'info') {
             to { 
                 transform: translateX(0) translateZ(20px) rotateY(0deg);
                 opacity: 1;
+            }
+        }
+        
+        @keyframes slideOutRight3D {
+            from {
+                transform: translateX(0) translateZ(20px) rotateY(0deg);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%) translateZ(-50px) rotateY(30deg);
+                opacity: 0;
             }
         }
     `;
@@ -316,13 +364,13 @@ function showNotification(message, type = 'info') {
         setTimeout(() => notification.remove(), 300);
     });
     
-    // Auto remove after 5 seconds
+    // Auto remove after 7 seconds (increased for better readability)
     setTimeout(() => {
         if (notification.parentNode) {
             notification.style.animation = 'slideOutRight3D 0.3s ease forwards';
             setTimeout(() => notification.remove(), 300);
         }
-    }, 5000);
+    }, 7000);
 }
 
 // Copy to clipboard function
@@ -529,17 +577,6 @@ particleStyle.textContent = `
             transform: translateY(0) translateZ(0px) rotateX(0deg);
         }
     }
-    
-    @keyframes slideOutRight3D {
-        from {
-            transform: translateX(0) translateZ(20px) rotateY(0deg);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(100%) translateZ(-50px) rotateY(30deg);
-            opacity: 0;
-        }
-    }
 `;
 document.head.appendChild(particleStyle);
 
@@ -612,7 +649,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Add 3D tilt effect to cards
+// Add smoother 3D tilt effect to cards (reduced sensitivity)
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.project-card, .skill-item, .education-item, .publication-card');
     
@@ -625,16 +662,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            const rotateX = (y - centerY) / 8;
-            const rotateY = (centerX - x) / 8;
+            // Reduced sensitivity from /8 to /20 for smoother effect
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
             
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px) scale3d(1.05, 1.05, 1.05)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px) scale3d(1.02, 1.02, 1.02)`;
             card.style.transition = 'transform 0.1s ease';
         });
         
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale3d(1, 1, 1)';
-            card.style.transition = 'transform 0.3s ease';
+            card.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
         });
     });
 });
