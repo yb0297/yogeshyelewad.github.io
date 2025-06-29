@@ -177,11 +177,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Enhanced notification system with 3D effects
 function showNotification(message, type = 'info') {
-    console.log('Showing notification:', message, type); // Debug log
+    console.log('Creating notification:', message, type);
     
     // Remove any existing notifications first
     const existingNotifications = document.querySelectorAll('.notification');
-    existingNotifications.forEach(notification => notification.remove());
+    existingNotifications.forEach(notification => {
+        notification.remove();
+    });
     
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
@@ -286,31 +288,56 @@ function showNotification(message, type = 'info') {
     }
     
     document.body.appendChild(notification);
+    console.log('Notification added to DOM');
     
     // Close notification
-    notification.querySelector('.notification-close').addEventListener('click', () => {
-        notification.style.animation = 'slideOutRight3D 0.3s ease forwards';
-        setTimeout(() => notification.remove(), 300);
-    });
+    const closeBtn = notification.querySelector('.notification-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            notification.style.animation = 'slideOutRight3D 0.3s ease forwards';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 300);
+        });
+    }
     
-    // Auto remove after 7 seconds (increased for better readability)
+    // Auto remove after 7 seconds
     setTimeout(() => {
         if (notification.parentNode) {
             notification.style.animation = 'slideOutRight3D 0.3s ease forwards';
-            setTimeout(() => notification.remove(), 300);
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 300);
         }
     }, 7000);
 }
 
-// Enhanced contact form handling with FormCarry integration
-document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.getElementById('contactForm');
-    console.log('Contact form found:', contactForm); // Debug log
+// Wait for DOM to be fully loaded before setting up form
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, setting up form...');
     
-    if (contactForm) {
+    // Wait a bit more to ensure all elements are rendered
+    setTimeout(() => {
+        const contactForm = document.getElementById('contactForm');
+        console.log('Looking for contact form...', contactForm);
+        
+        if (!contactForm) {
+            console.error('Contact form not found!');
+            return;
+        }
+        
+        console.log('Contact form found, adding event listener...');
+        
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            console.log('Form submitted!'); // Debug log
+            console.log('Form submission started!');
+            
+            // Show immediate feedback
+            showNotification('Sending your message...', 'info');
             
             // Get form data
             const formData = new FormData(this);
@@ -319,10 +346,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const subject = formData.get('subject');
             const message = formData.get('message');
             
-            console.log('Form data:', { name, email, subject, message }); // Debug log
+            console.log('Form data collected:', { name, email, subject, message });
             
-            // Enhanced validation
+            // Validation
             if (!name || !email || !subject || !message) {
+                console.log('Validation failed: missing fields');
                 showNotification('Please fill in all fields.', 'error');
                 return;
             }
@@ -330,22 +358,23 @@ document.addEventListener('DOMContentLoaded', () => {
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
+                console.log('Validation failed: invalid email');
                 showNotification('Please enter a valid email address.', 'error');
                 return;
             }
             
-            // Submit form
+            console.log('Validation passed, submitting to FormCarry...');
+            
+            // Get submit button
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
+            // Update button state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
             submitBtn.disabled = true;
             
             try {
-                console.log('Submitting to FormCarry...'); // Debug log
-                
-                // Submit to FormCarry
-                const response = await fetch(this.action, {
+                const response = await fetch('https://formcarry.com/s/hbe9QgzwFC4', {
                     method: 'POST',
                     body: formData,
                     headers: {
@@ -353,57 +382,44 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
                 
-                console.log('Response status:', response.status); // Debug log
-                console.log('Response ok:', response.ok); // Debug log
+                console.log('FormCarry response received:', response.status, response.ok);
                 
                 if (response.ok) {
-                    // Try to parse JSON response
-                    let result;
-                    try {
-                        result = await response.json();
-                        console.log('FormCarry response:', result); // Debug log
-                    } catch (jsonError) {
-                        console.log('Could not parse JSON, treating as success'); // Debug log
-                        result = { code: 200 }; // Assume success if we can't parse JSON
-                    }
+                    // Success
+                    console.log('Form submitted successfully!');
+                    showNotification(`Thank you ${name}! Your message has been sent successfully. I'll get back to you soon.`, 'success');
                     
-                    if (result.code === 200 || response.status === 200) {
-                        // FormCarry success response
-                        showNotification(`Thank you ${name}! Your message has been sent successfully. I'll get back to you soon.`, 'success');
-                        this.reset(); // Clear the form
-                        
-                        // Store success state
-                        localStorage.setItem('contactFormSubmitted', 'true');
-                        localStorage.setItem('contactFormName', name);
-                    } else {
-                        // Handle FormCarry error response
-                        const errorMessage = result.message || 'There was an error sending your message. Please try again.';
-                        showNotification(errorMessage, 'error');
-                    }
+                    // Reset form
+                    this.reset();
+                    
+                    // Store success state for page reload
+                    localStorage.setItem('contactFormSubmitted', 'true');
+                    localStorage.setItem('contactFormName', name);
                 } else {
-                    // Handle HTTP error
-                    console.log('HTTP error:', response.status); // Debug log
-                    showNotification('Sorry, there was an error sending your message. Please try again or contact me directly.', 'error');
+                    console.log('FormCarry returned error status:', response.status);
+                    showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
                 }
             } catch (error) {
-                console.error('Form submission error:', error);
-                showNotification('Sorry, there was an error sending your message. Please try again or contact me directly.', 'error');
+                console.error('Network error:', error);
+                showNotification('Network error. Please check your connection and try again.', 'error');
             } finally {
                 // Reset button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }
         });
-    } else {
-        console.error('Contact form not found!'); // Debug log
-    }
+        
+        console.log('Form event listener added successfully!');
+    }, 500); // Wait 500ms for everything to load
 });
 
 // Check for successful form submission on page load
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     if (localStorage.getItem('contactFormSubmitted') === 'true') {
         const name = localStorage.getItem('contactFormName') || 'there';
-        showNotification(`Welcome back! Your message was sent successfully, ${name}. I'll respond soon!`, 'success');
+        setTimeout(() => {
+            showNotification(`Welcome back! Your message was sent successfully, ${name}. I'll respond soon!`, 'success');
+        }, 1000);
         
         // Clear the stored state
         localStorage.removeItem('contactFormSubmitted');
