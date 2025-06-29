@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, 1000);
 });
 
-// Enhanced contact form handling with AJAX
+// Enhanced contact form handling with FormCarry integration
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
@@ -209,8 +209,8 @@ if (contactForm) {
         submitBtn.disabled = true;
         
         try {
-            // Submit to FormCarry using fetch
-            const response = await fetch('https://formcarry.com/s/hbe9QgzwFC4', {
+            // Submit to FormCarry
+            const response = await fetch(this.action, {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -218,8 +218,10 @@ if (contactForm) {
                 }
             });
             
-            if (response.ok) {
-                // Success - show notification and reset form
+            const result = await response.json();
+            
+            if (response.ok && result.code === 200) {
+                // FormCarry success response
                 showNotification(`Thank you ${name}! Your message has been sent successfully. I'll get back to you soon.`, 'success');
                 this.reset(); // Clear the form
                 
@@ -227,7 +229,9 @@ if (contactForm) {
                 localStorage.setItem('contactFormSubmitted', 'true');
                 localStorage.setItem('contactFormName', name);
             } else {
-                throw new Error('Form submission failed');
+                // Handle FormCarry error response
+                const errorMessage = result.message || 'There was an error sending your message. Please try again.';
+                showNotification(errorMessage, 'error');
             }
         } catch (error) {
             console.error('Form submission error:', error);
